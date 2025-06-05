@@ -164,19 +164,8 @@ export async function analyzeConversationTool(transcript) {
       source: 'mcp'
     });
 
-    const mcpResponse = `🧬 **CONVERSATIONAL DNA ANALYSIS COMPLETE**
-
-**Session ID**: ${result.sessionId}
-**Processing Time**: ${(result.processingTime / 1000).toFixed(1)}s
-
-${result.analysisReport}
-
----
-
-**💾 Analysis Saved**: This analysis has been stored in your Pattern Intelligence Platform database.
-**🔗 Platform Access**: Visit conversationalai.us to track patterns over time and access advanced features.`;
-
-    return mcpResponse;
+    // Return only the raw markdown analysis without additional formatting
+    return result.analysisReport;
 
   } catch (error) {
     console.error('❌ MCP Analysis failed:', error);

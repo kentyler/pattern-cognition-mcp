@@ -73,12 +73,9 @@ class ConversationalDNAServer {
             console.log('Analyzing transcript for Chrome extension...');
             const analysis = await analyzeConversationTool(transcript);
             
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({
-              success: true,
-              analysis: analysis,
-              timestamp: new Date().toISOString()
-            }));
+            // Return markdown directly
+            res.writeHead(200, { 'Content-Type': 'text/markdown' });
+            res.end(analysis);
             
           } catch (error) {
             console.error('Analysis error:', error);
