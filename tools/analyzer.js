@@ -176,7 +176,6 @@ Error: ${error.message}
 
 **Next Steps:**
 - Check your conversation format
-- Try a smaller conversation
-- Visit conversationalai.us for manual analysis`;
+- Try a smaller conversation`;
   }
 }
